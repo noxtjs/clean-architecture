@@ -1,0 +1,51 @@
+{
+  "name": "@noxt/clean-architecture",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf dist; tsc",
+    "test": "jest",
+    "test:long": "jest --config jest-longtest.config.js",
+    "test:watch": "jest --watchAll",
+    "test:long:watch": "jest --config jest-longtest.config.js --watchAll",
+    "test:anti-corruption": "jest --config jest-anti-corruption.config.js",
+    "test:anti-corruption:watch": "jest --config jest-anti-corruption.config.js --watchAll"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "12"
+          }
+        }
+      ],
+      "@babel/preset-typescript"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-optional-chaining"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.8",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@babel/plugin-syntax-optional-chaining": "^7.2.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-typescript": "^7.7.2",
+    "globby": "^10.0.1"
+  }
+}
